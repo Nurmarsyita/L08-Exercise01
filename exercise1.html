@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About Us Page</title>
+  <link rel="stylesheet" href="exercise_style.css">
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <section class="about-us">
+    <div class="about">
+
+      <div class="picme">
+        <img src="Images/me.jpg" class="pic">
+      </div>
+
+      <div class="meText">
+        <h2>About Me</h2>
+
+        <div class="otherText">
+          <h5>UI/UX Designer</h5><br>
+        </div>
+
+        <div class="otherText2">
+          <p>I am Nurmarsyita. Currently, I am in year two in Digital Design and Development in Republic Polytechnic and
+            I
+            am passionate about UI/UX design. I am inspired by design that is both aesthetically pleasing and
+            functional.
+            I strive to create designs that can help users to easily access and understand information. I am
+            continuously
+            looking for ways to improve my design skills and stay up to date with the latest trends. It is my goal to
+            create websites and applications that are both interesting and functional. I am excited to begin my career
+            in
+            UI/UX design and use my skills to help make a positive will enable me to be successful in this field.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    anime({
+      targets: ".picme",
+      translateX: 100,
+      rotate: 0,
+      opacity: [0, 1], //start and end values
+      delay: 500
+    });
+
+    //staggering
+    anime({
+      targets: ".otherText",
+      translateY: -300,
+      rotate: 180,
+      delay: anime.stagger(300, { start: 1000 }),
+      direction: 'alternate'
+    });
+
+    anime({
+      targets: '.otherText2',
+      translateY: -300,
+      rotate: 180,
+      delay: anime.stagger(300, { start: 1500 }),
+      direction: 'alternate'
+    });
+
+    // control
+    var animation = anime({
+      targets: '.meText',
+      translateX: 300,
+      scale: 2,
+      easing: 'easeInOutExpo',
+      direction: 'alternate',
+      duration: 2000,
+      autoplay: false
+    });
+
+    document.querySelector('.meText').onclick = animation.play;
+    document.querySelector('.picme').onclick = animation.pause;
+    document.querySelector('.meText').onclick = animation.restart;
+  </script>
+
+</body>
+
+</html>
